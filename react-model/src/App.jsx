@@ -1,11 +1,12 @@
 import React from 'react'
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './components/Home'
 import Bollywood from './components/Bollywood'
 import Hollywood from './components/Hollywood'
 import Technology from './components/Technology'
 import Fitness from './components/Fitness'
 import Food from './components/Food'
+import Navbar from './components/Navbar'
 import './App.css'
 
 const App = () => {
@@ -13,12 +14,7 @@ const App = () => {
     <div>
       <BrowserRouter>
 
-        <Link to="/">Home</Link>
-        <Link to="/bollywood">Bollywood</Link>
-        <Link to="/hollywood">Hollywood</Link>
-        <Link to="/tech">Technology</Link>
-        <Link to="/fitness">Fitness</Link>
-        <Link to="/food">Food</Link>
+        <Navbar />
 
         <Routes>
           <Route path="/" element={<Home />} />
