@@ -1,22 +1,24 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
-import Data from '../Data';
-// console.log(Data);
-const Deatils = () => {
+import { useNavigate, useParams } from 'react-router-dom'
+import Data from '../Data'
 
-const { id } = useParams();
+const Details = () => {
 
-const post = Data.find((item)=>item.id===parseInt(id))
-return (
-<>
-<div>Deatils Page</div>
-<div>
-{/* <h1>{post.title}</h1> */}
-<img src={post.img_url}/>
-<p>{post.description}</p>
-</div>
-</>
-)
+    const {id} = useParams()
+    const navigate = useNavigate()
+
+    const post  = Data.find((item)=>item.id===parseInt(id))
+  return (
+    <>
+    <div>Details</div>
+    <button onClick={()=>navigate(-1)}>Back</button>
+        <>
+        <h1>{post.title}</h1>
+        <img src={post.img_url}/>
+        <p>{post.description}</p>
+        </>
+    </>
+  )
 }
 
-export default Deatils
+export default Details
